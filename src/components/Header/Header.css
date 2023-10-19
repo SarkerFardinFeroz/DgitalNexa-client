@@ -1,0 +1,12 @@
+nav ul li a.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    transition: ease-in-out;
+    color: #24dc7a;
+  }
+  nav ul li a:hover {
+    color: #24dc7a;
+  
+    text-underline-offset: 6px;
+  }
+  

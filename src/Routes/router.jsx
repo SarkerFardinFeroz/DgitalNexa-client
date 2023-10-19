@@ -4,7 +4,8 @@ import Home from "../pages/Home/Home";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import Layouts from "../layouts/Layout";
-
+import AddProduct from "../pages/AddProduct/AddProduct";
+import PrivetRoute from "./PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,15 @@ const router = createBrowserRouter([
         element: <Home />,
         loader: () => fetch("/"),
       },
-     
+      {
+        path: "/addProduct",
+        element: (
+          <PrivetRoute>
+            <AddProduct />
+          </PrivetRoute>
+        ),
+      },
+
       {
         path: "/login",
         element: <LoginPage />,

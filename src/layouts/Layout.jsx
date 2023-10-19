@@ -3,6 +3,7 @@ import { Outlet, useNavigation } from "react-router-dom";
 import { InfinitySpin } from "react-loader-spinner";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 const Layouts = () => {
   const navigation = useNavigation();
@@ -17,6 +18,7 @@ const Layouts = () => {
         <Outlet />
       )}
       <Footer />
+      <Toaster/>
     </div>
   );
 };
