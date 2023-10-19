@@ -4,9 +4,10 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 import { AuthContext } from "../../Provider/AuthProvider";
+import ToggelMode from "../ToggelMode/ToggelMode";
 const Header = () => {
-  const {user,logOut} = useContext(AuthContext)
-  const [theme,setTheme]=useState(localStorage.getItem())
+  const { user, logOut } = useContext(AuthContext);
+
   const [open, setOpen] = useState(false);
   const handleSignOut = () => {
     logOut().then().catch();
@@ -22,37 +23,52 @@ const Header = () => {
       <li>
         <NavLink to={"/cart"}>My cart</NavLink>
       </li>
+      <li className="lg:hidden"><ToggelMode/></li>
     </>
   );
   return (
-    <header className=" bg-[#00000031] backdrop-blur-sm  relative z-50    ">
-      <nav className=" flex  gap-8 justify-between max-w-[1304px] px-4   mx-auto pt-2 pb-3  items-center">
-        <div className=" order-2 lg:order-1 md:w-[300px]">
-          <h1 className="font-bold   bg-gradient-to-r  text-xl md:text-3xl">
-            DigitalNe<span className="text-black bg-white px-2 rounded-full">X</span>a
-          </h1>
-        </div>
-        <div className="order-1 lg:order-2 ">
-          <div className="flex  basis items-center gap-3">
-            <div
-              onClick={() => setOpen(!open)}
-              className="lg:hidden border border-gray-900 bg-[#111c] rounded-md shadow-xl p-2   text-lg "
+    <header className="  shadow-lg   relative  ">
+      <nav className="navbar max-w-[1304px] px-4   mx-auto bg-base-100">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] bg-base-100  p-2 shadow  rounded-box w-52"
             >
-              {open === true ? <AiOutlineClose /> : <AiOutlineMenu />}
-            </div>
+              {navLinks}
+              
+            </ul>
           </div>
-          <ul
-            className={`lg:flex justify-between lg:w-[400px]  duration-200 shadow-xl lg:shadow-none z-50 absolute lg:static left-4 space-y-6 lg:space-y-0 items-center bg-[#000000e7] lg:bg-none lg:bg-transparent border border-gray-900   lg:border-none p-6 rounded-lg top-[56px] font-medium    ${
-              open ? "scale-100 " : "scale-0 lg:scale-100"
-            } `}
-          >
-            {navLinks}
-          </ul>
+          <div className="btn btn-ghost normal-case text-xl">
+            {" "}
+            <h1 className="font-bold    text-xl md:text-3xl">
+              DigitalNeXa
+            </h1>
+          </div>
         </div>
-        <div className=" lg:basis-[20%] order-3 lg:order-3  justify-end lg:w-[300px]">
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal gap-5  px-1">{navLinks}</ul>
+        </div>
+        <div className="navbar-end">
           <div>
             {user ? (
-              <div className="flex justify-end">
+              <div className="flex items-center justify-end">
                 <div className="dropdown dropdown-end">
                   <label
                     tabIndex={0}
@@ -68,7 +84,7 @@ const Header = () => {
                   </label>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content  mt-3 z-[1] p-4 shadow bg-base-100 rounded-box w-52"
+                    className="menu menu-sm dropdown-content  mt-3 z-[1] p-4 shadow-md border bg-base-100 rounded-box w-52"
                   >
                     <li>
                       <a>
@@ -81,16 +97,23 @@ const Header = () => {
                     <li>
                       <button onClick={handleSignOut}>Sing Out</button>
                     </li>
+                    
                   </ul>
+                </div>
+                <div className="lg:flex items-center ">
+                  <ToggelMode />
                 </div>
               </div>
             ) : (
               <div className="flex justify-end">
                 <Link to={"/login"}>
-                  <button className="py-2 px-4 text-sm rounded-lg duration-300 font-medium  capitalize  md:text-base   bg-white text-black">
+                  <button className=" btn text-sm rounded-lg duration-300 font-medium  capitalize  md:text-base  " >
                     login
                   </button>
                 </Link>
+               <div className="hidden lg:flex items-center">
+               <ToggelMode/>
+               </div>
               </div>
             )}
           </div>

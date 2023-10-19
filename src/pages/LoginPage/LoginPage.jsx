@@ -34,22 +34,21 @@ const LoginPage = () => {
   };
   return (
     <div className="min-h-[90vh] md:min-h-[80vh]  flex flex-col justify-center items-center   px-4 mx-auto">
-      <div className="bg-[#a3a3a323] p-5 md:p-6  rounded-xl">
+      <div className="bg-[#000000d8] p-5 md:p-6  rounded-xl">
         <div>
-          <h2 className="text-white text-2xl font-semibold">
+          <h2 className=" text-white text-2xl font-semibold">
             Login to your account
           </h2>
           <p className="text-[#c0bfbf]  pt-1 text-sm">
             Enter your email below to login your account
           </p>
           <div className="flex flex-col md:flex-row  gap-3 py-3">
-            
             <button
-              onClick={ handleSocialLogin}
+              onClick={handleSocialLogin}
               className="flex  items-center   px-3 w-[150px] py-[6px] mx-auto md:px-5 md:py-2 rounded-md bg-black border border-[#f8f8f838] gap-3"
             >
-              <FcGoogle className="text-2xl" />
-              Google
+              <FcGoogle className="text-2xl " />
+              <p className="text-white">Google</p>
             </button>
           </div>
           <div className="text-xs flex text-[#c0bfbf] font-medium justify-center items-center py-1 md:py-3 gap-1 text-center">
@@ -68,7 +67,7 @@ const LoginPage = () => {
                 type="email"
                 placeholder=" Email address here"
                 name="email"
-                className="input bg-transparent md:h-[55px] input-bordered"
+                className="input text-white placeholder-[#d1d0d0e7] bg-[#000000d8] md:h-[55px]  input-bordered"
                 required
               />
             </div>
@@ -82,7 +81,7 @@ const LoginPage = () => {
                 type={isShow ? "text" : "password"}
                 placeholder="password here"
                 name="password"
-                className=" input  mb-1 bg-transparent md:h-[55px] input-bordered"
+                className=" input text-white placeholder-[#d1d0d0e7]  mb-1 bg-[#000000d8] md:h-[55px] input-bordered"
                 required
               />
               <span
@@ -106,7 +105,7 @@ const LoginPage = () => {
             <div className="form-control  mt-6">
               <button
                 type="submit"
-                className="py-2 rounded-lg duration-300 font-semibold w-full capitalize  md:text-lg   bg-white text-black "
+                className="btn  py-2 hover:bg-[#e0e0e0]  rounded-lg duration-300 font-semibold w-full capitalize  md:text-lg   bg-white  text-black "
               >
                 login
               </button>

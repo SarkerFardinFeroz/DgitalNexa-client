@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 const Layouts = () => {
   const navigation = useNavigation();
   return (
-    <div className="font-Inter h-full text-white bg-black">
+    <div className="font-Inter">
       <Header/>
       {navigation.state === "loading" ? (
         <div className=" max-w-[1304px] flex items-center justify-center h-[70vh] px-4  mx-auto ">

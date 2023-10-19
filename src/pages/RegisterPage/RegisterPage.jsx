@@ -75,7 +75,7 @@ const RegisterPage = () => {
   return (
     <div>
       <div className="min-h-[90vh] md:min-h-[80vh]  flex flex-col justify-center items-center   px-4 mx-auto">
-        <div className="bg-[#a3a3a323] p-5 md:p-6  rounded-xl">
+        <div className="bg-[#000000d8] p-5 md:p-6  rounded-xl">
           <div>
             <h2 className="text-white text-2xl font-semibold">
               Login to your account
@@ -108,7 +108,7 @@ const RegisterPage = () => {
                   type="text"
                   placeholder="Your Name here"
                   name="name"
-                  className="input bg-transparent md:h-[55px] input-bordered"
+                  className="input  text-white placeholder-[#d1d0d0e7] bg-[#000000d8] md:h-[55px] input-bordered"
                   required
                 />
               </div>
@@ -122,7 +122,7 @@ const RegisterPage = () => {
                   type="text"
                   placeholder="Profile url here"
                   name="photo"
-                  className="input bg-transparent md:h-[55px] input-bordered"
+                  className="input text-white placeholder-[#d1d0d0e7] bg-[#000000d8] md:h-[55px] input-bordered"
                   required
                 />
               </div>
@@ -136,7 +136,7 @@ const RegisterPage = () => {
                   type="email"
                   placeholder=" Email address here"
                   name="email"
-                  className="input bg-transparent md:h-[55px] input-bordered"
+                  className="input text-white placeholder-[#d1d0d0e7] bg-[#000000d8] md:h-[55px] input-bordered"
                   required
                 />
               </div>
@@ -150,7 +150,7 @@ const RegisterPage = () => {
                   type={isShow ? "text" : "password"}
                   placeholder="password here"
                   name="password"
-                  className=" input  mb-1 bg-transparent md:h-[55px] input-bordered"
+                  className=" input  mb-1 text-white placeholder-[#d1d0d0e7] bg-[#000000d8] md:h-[55px] input-bordered"
                   required
                 />
                 <span
@@ -174,7 +174,7 @@ const RegisterPage = () => {
               <div className="form-control  mt-6">
                 <button
                   type="submit"
-                  className="py-2 rounded-lg duration-300 font-semibold w-full capitalize  md:text-lg   hover:scale-105 hover:shadow-md hover:shadow-[#1cdb033d] bg-white text-black "
+                  className="btn  py-2 hover:bg-[#e0e0e0]  rounded-lg duration-300 font-semibold w-full capitalize  md:text-lg   bg-white  text-black "
                 >
                   Register
                 </button>
