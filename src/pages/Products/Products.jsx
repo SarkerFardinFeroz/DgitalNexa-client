@@ -1,7 +1,6 @@
 import { useLoaderData, useLocation } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import Product from "./Product";
-import { useEffect, useState } from "react";
 
 const Products = () => {
   const products = useLoaderData();

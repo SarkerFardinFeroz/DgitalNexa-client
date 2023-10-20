@@ -48,7 +48,7 @@ const router = createBrowserRouter([
           fetch(`http://localhost:5000/products/${params.brand}`),
       },
       {
-        path: "/products/:id",
+        path: "/products/details/:id",
         element: (
           <PrivetRoute>
             <ProductDetails />

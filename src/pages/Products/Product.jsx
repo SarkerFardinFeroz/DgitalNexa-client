@@ -12,6 +12,7 @@ const Product = (product) => {
     image,
     brand_name,
   } = product.product;
+  console.log(_id);
   return (
     <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-full rounded-xl bg-clip-border">
       <div className="relative mx-4 border mt-4 overflow-hidden text-gray-700 bg-white  rounded-xl bg-clip-border">
@@ -65,7 +66,7 @@ const Product = (product) => {
       </div>
       <div className="p-6 pt-0">
        <div className=" flex gap-4 justify-start">
- <Link to={`/products/${_id}`} className='w-full'> <button className='border   text-white bg-black w-full px-4 py-[6px] rounded-lg'>Details</button></Link>
+ <Link to={`/products/details/${_id}`} className='w-full'> <button className='border   text-white bg-black w-full px-4 py-[6px] rounded-lg'>Details</button></Link>
   <Link className='w-full'><button className='border border-black text-black w-full px-4 py-[6px]  rounded-lg'>Update</button></Link>
  </div>
       </div>
