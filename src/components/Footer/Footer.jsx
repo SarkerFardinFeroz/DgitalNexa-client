@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="">
+    <div className="shadow-2xl border-t  border-[#8e8d8d3f] mt-14">
       <footer className="footer max-w-[1304px] px-4 mx-auto p-10  text-base-content">
       <aside>
           <h1 className="font-bold  text-xl md:text-3xl">
-            DigitalNeXa
+           <Link to={'/'}> DigitalNeXa</Link>
           </h1>
           <p>
             123 Skyline Plaza Avenue
@@ -43,7 +43,7 @@ const Footer = () => {
       <div>
         <div className="w-[90%] mx-auto h-[1px] bg-[#868686]"></div>
         <div className="text-center py-5">
-          <p className="text-sm text-[#acacac] px-4">
+          <p className="text-sm  px-4">
             2023 © Sarker Fardin Feroz | All rights reserved
           </p>
         </div>

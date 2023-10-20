@@ -1,10 +1,9 @@
-import { useLoaderData } from "react-router-dom";
-import BrandCards from "../../components/BrandCards/BrandCards";
 
-const Home = () => {
-  const brandCards = useLoaderData();
+
+const Banner = () => {
+
   return (
-    <main className="max-w-[1304px] px-4   mx-auto">
+    <div className={`h-screen lg:h-[70vh]  mt-[-93px]  `}>
       <div className="max-w-[85rem] mx-auto px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           <div>
@@ -385,15 +384,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <div>
-        <h1 className="text-4xl my-6 text-center">
-          Popular Brands : {brandCards.length}
-        </h1>
-        <div className="grid gap-6 md:grid-cols-3">{brandCards.map((card,idx)=><BrandCards key={idx} card={card} />)}</div>
-      </div>
-    </main>
+    </div>
   );
 };
 
-export default Home;
+export default Banner;

@@ -6,6 +6,7 @@ import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import Layouts from "../layouts/Layout";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import PrivetRoute from "./PrivetRoute";
+import Products from "../pages/Products/Products";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("/"),
+        loader: () => fetch("http://localhost:5000/brand"),
       },
       {
         path: "/addProduct",
@@ -25,6 +26,15 @@ const router = createBrowserRouter([
             <AddProduct />
           </PrivetRoute>
         ),
+      },
+      {
+        path: "/products",
+        element: (
+          <PrivetRoute>
+            <Products />
+          </PrivetRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/products"),
       },
 
       {

@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import PropTypes from "prop-types";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -8,7 +8,6 @@ import ToggelMode from "../ToggelMode/ToggelMode";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  const [open, setOpen] = useState(false);
   const handleSignOut = () => {
     logOut().then().catch();
   };
@@ -18,17 +17,22 @@ const Header = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
+        <NavLink to={"/products"}>Products</NavLink>
+      </li>
+      <li>
         <NavLink to={"/addProduct"}>Add Product</NavLink>
       </li>
       <li>
         <NavLink to={"/cart"}>My cart</NavLink>
       </li>
-      <li className="lg:hidden"><ToggelMode/></li>
+      <li className="lg:hidden">
+        <ToggelMode />
+      </li>
     </>
   );
   return (
-    <header className="  shadow-lg   relative  ">
-      <nav className="navbar max-w-[1304px] px-4   mx-auto bg-base-100">
+    <header className=" mb-14 shadow-lg   relative  ">
+      <nav className="navbar max-w-[1504px] px-4   mx-auto bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,15 +56,13 @@ const Header = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] bg-base-100  p-2 shadow  rounded-box w-52"
             >
               {navLinks}
-              
             </ul>
           </div>
-          <div className="btn btn-ghost normal-case text-xl">
-            {" "}
-            <h1 className="font-bold    text-xl md:text-3xl">
-              DigitalNeXa
-            </h1>
-          </div>
+          <Link to={'/'}>
+            <div className="btn btn-ghost normal-case text-xl">
+              <h1 className="font-bold    text-xl md:text-3xl">DigitalNeXa</h1>
+            </div>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-5  px-1">{navLinks}</ul>
@@ -97,7 +99,6 @@ const Header = () => {
                     <li>
                       <button onClick={handleSignOut}>Sing Out</button>
                     </li>
-                    
                   </ul>
                 </div>
                 <div className="lg:flex items-center ">
@@ -107,13 +108,13 @@ const Header = () => {
             ) : (
               <div className="flex justify-end">
                 <Link to={"/login"}>
-                  <button className=" btn text-sm rounded-lg duration-300 font-medium  capitalize  md:text-base  " >
+                  <button className=" btn text-sm rounded-lg duration-300 font-medium  capitalize  md:text-base  ">
                     login
                   </button>
                 </Link>
-               <div className="hidden lg:flex items-center">
-               <ToggelMode/>
-               </div>
+                <div className="hidden lg:flex items-center">
+                  <ToggelMode />
+                </div>
               </div>
             )}
           </div>
