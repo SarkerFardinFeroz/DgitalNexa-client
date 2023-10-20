@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
-  const[brand_name,setBrand] = useState('')
+  const[brand,setBrand] = useState('')
   const handleBrandChange=e=>{
  
     setBrand(e.target.value)
@@ -24,7 +24,7 @@ const AddProduct = () => {
     if(name === ''){
       return  toast.error("Please provide Product name");
     }
-    if(brand_name === ''){
+    if(brand === ''){
       return  toast.error("Please select Brand name");
     }
     if(category === ''){
@@ -52,7 +52,7 @@ const AddProduct = () => {
       rating,
       short_description,
       image,
-      brand_name
+      brand
     };
     console.log(newProduct);
       // send data to the server

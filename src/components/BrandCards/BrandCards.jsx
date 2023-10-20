@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 const BrandCards = ({ card }) => {
   
-  const { brand_image } = card;
+  const { brand_image ,name } = card;
   return (
-    <Link to={'/products'}>
+    <Link to={`/products/${name}`}>
       <div className="card border bg-white  shadow-md">
       <div className="p-5">
         <img className="object-contain mx-auto w-[200px] h-[200px]" src={brand_image} alt="" />
