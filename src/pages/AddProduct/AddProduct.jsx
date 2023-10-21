@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 const AddProduct = () => {
   const[brand,setBrand] = useState('')
   const handleBrandChange=e=>{
- 
     setBrand(e.target.value)
   }
   const handleAddProduct = (e) => {

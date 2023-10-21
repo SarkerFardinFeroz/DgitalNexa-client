@@ -12,16 +12,19 @@ const Products = () => {
   console.log(result);
   return (
     <div>
-      <div className="pb-4">
+      <div className="pb-4 max-w-[1504px] px-4   mx-auto">
         <Banner />
       </div>
       <section className=" max-w-[1504px] px-4   mx-auto my-20">
-        <h2 className="text-4xl text-center mb-10 font-bold">{result?`${result} Product`:'Products'}</h2>
+        <h2 className="text-4xl text-center mb-10 font-bold">
+          {result ? `${result} Product` : "Products"}
+        </h2>
 
         <div className="grid md:grid-cols-3 xl:grid-cols-5  gap-4">
-          {products?.map((product, idx) => (
-            <Product key={idx} product={product} />
-          ))}
+          
+            {products?.map((product, idx) => (
+              <Product key={idx} product={product} />
+            ))}
         </div>
       </section>
     </div>

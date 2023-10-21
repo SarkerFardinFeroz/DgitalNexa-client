@@ -8,6 +8,7 @@ import AddProduct from "../pages/AddProduct/AddProduct";
 import PrivetRoute from "./PrivetRoute";
 import Products from "../pages/Products/Products";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
+import UpdateProduct from "../pages/UpdataProduct/UpdateProduct";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +22,18 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/brand"),
       },
       {
-        path: "/addProduct",
+        path: "/add/product",
         element: (
           <PrivetRoute>
             <AddProduct />
           </PrivetRoute>
         ),
+      },
+      {
+        path: "/update/product/:id",
+        element: <UpdateProduct />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.id}`),
       },
       {
         path: "/products",

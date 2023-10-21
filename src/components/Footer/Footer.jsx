@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="footer max-w-[1304px] px-4 mx-auto p-10  text-base-content">
       <aside>
           <h1 className="font-bold  text-xl md:text-3xl">
-           <Link to={'/'}> DigitalNeXa</Link>
+           <Link to={'/'}> DigitalNe<span className="bg-[#24dc7a] text-black px-2 rounded-full">X</span>a</Link>
           </h1>
           <p>
             123 Skyline Plaza Avenue

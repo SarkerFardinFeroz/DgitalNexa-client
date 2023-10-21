@@ -2,6 +2,7 @@ nav ul li a.active {
     text-decoration: underline;
     text-underline-offset: 6px;
     transition: ease-in-out;
+    font-weight: 700;
     color: #24dc7a;
   }
   nav ul li a:hover {

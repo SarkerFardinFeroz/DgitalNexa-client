@@ -20,7 +20,7 @@ const Header = () => {
         <NavLink to={"/products"}>Products</NavLink>
       </li>
       <li>
-        <NavLink to={"/addProduct"}>Add Product</NavLink>
+        <NavLink to={"/add/product"}>Add Product</NavLink>
       </li>
       <li>
         <NavLink to={"/cart"}>My cart</NavLink>
@@ -31,8 +31,8 @@ const Header = () => {
     </>
   );
   return (
-    <header className=" mb-14 shadow-lg   relative  ">
-      <nav className="navbar max-w-[1504px] px-4   mx-auto bg-base-100">
+    <header className=" relative z-50 bg-[#000000b4]  shadow-lg border-b border-[#61616131] backdrop-blur-2xl  text-white   ">
+      <nav className="navbar max-w-[1504px] px-4   mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -60,12 +60,12 @@ const Header = () => {
           </div>
           <Link to={'/'}>
             <div className="btn btn-ghost normal-case text-xl">
-              <h1 className="font-bold    text-xl md:text-3xl">DigitalNeXa</h1>
+              <h1 className="font-bold text-xl md:text-3xl">DigitalNe<span className="bg-[#24dc7a] text-black px-2 rounded-full">X</span>a</h1>
             </div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal gap-5  px-1">{navLinks}</ul>
+          <ul className=" menu-horizontal gap-5 bg-none  px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
           <div>
