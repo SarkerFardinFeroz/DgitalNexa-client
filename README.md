@@ -28,5 +28,5 @@
    ### 8. **Update products** :
   - ##### Additionally, users are provided with the capability to make updates to specific product information. This feature enables users to conveniently and flexibly manage the details of individual products, ensuring that the information remains accurate and up-to-date according to their requirements.
   
-### 9. **Update products** :
+### 9. **Cart page** :
   - ##### Clients have the ability to include products into their cart page and, when necessary, remove items from it. This dual capability enables users to curate their shopping selections effectively, offering a convenient and personalized shopping experience
