@@ -23,7 +23,7 @@ const Home = () => {
 
       <div className="max-w-[1504px] px-4   mx-auto">
         <div>
-          <h1 className="text-6xl font-Caveat font-bold py-6 text-center">
+          <h1 className="font-Caveat  text-4xl md:text-6xl  font-bold py-6 text-center">
             Popular Brands
           </h1>
           <div className=" w-[200px] md:w-[600px] mx-auto h-[2px] bg-[#00000063]"></div>
@@ -37,7 +37,7 @@ const Home = () => {
         </div>
 
         <div className="py-20">
-          <h2 className="text-4xl  font-bold"> Popular Products: </h2>
+          <h2 className="font-Caveat  text-4xl md:text-6xl   font-bold"> Popular Products: </h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-4 mt-4 gap-4">
 
 
