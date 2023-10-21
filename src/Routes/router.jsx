@@ -37,12 +37,15 @@ const router = createBrowserRouter([
             <MyCart />
           </PrivetRoute>
         ),
-        loader: () =>
-          fetch(`https://digital-nexa-server.vercel.app/cart`),
+        loader: () => fetch(`https://digital-nexa-server.vercel.app/cart`),
       },
       {
         path: "/update/product/:id",
-        element: <UpdateProduct />,
+        element: (
+          <PrivetRoute>
+            <UpdateProduct />
+          </PrivetRoute>
+        ),
         loader: ({ params }) =>
           fetch(`https://digital-nexa-server.vercel.app/product/${params.id}`),
       },
@@ -63,7 +66,9 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://digital-nexa-server.vercel.app/products/${params.brand}`),
+          fetch(
+            `https://digital-nexa-server.vercel.app/products/${params.brand}`
+          ),
       },
       {
         path: "/products/details/:id",
