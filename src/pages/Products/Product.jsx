@@ -3,7 +3,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
 
-const Product = (product) => {
+const Product = ({product}) => {
   const {
     _id,
     name,
@@ -11,7 +11,7 @@ const Product = (product) => {
     rating,
     image,
     brand,
-  } = product.product;
+  } = product;
 
   return (
     <div className="relative flex flex-col text-gray-700 bg-white shadow-md w-full rounded-xl bg-clip-border">

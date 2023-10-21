@@ -1,10 +1,35 @@
 import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import toast from "react-hot-toast";
 const ProductDetails = () => {
   const product = useLoaderData();
+  const { user } = useContext(AuthContext);
   const { name, category, price, rating, short_description, image, brand } =
     product;
+
+  const newCart = {
+    product,
+    user: user.uid,
+  };
+
+  const handleAddToCart = () => {
+    // send data to the server
+    fetch("https://digital-nexa-server.vercel.app/cart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCart),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        toast.success("Product added to cart");
+      });
+  };
+
   return (
     <div className="max-w-[1504px] pt-14 px-4 mx-auto">
       <div className="lg:flex gap-10 border  shadow-xl p-5 md:p-10 rounded-lg ">
@@ -25,7 +50,7 @@ const ProductDetails = () => {
           <div className="text-3xl md:text-4xl text-orange-400">
             <Rating
               emptySymbol={<AiOutlineStar />}
-              fullSymbol={<AiFillStar/>}
+              fullSymbol={<AiFillStar />}
               initialRating={rating}
               readonly
             />
@@ -42,6 +67,10 @@ const ProductDetails = () => {
               <span className="font-bold">Rating:</span> {rating}
             </h4>
             <p className="text-xl mt-6">{short_description}</p>
+
+            <button onClick={handleAddToCart} className="mt-6 btn btn-outline">
+              Add to cart
+            </button>
           </div>
         </div>
       </div>

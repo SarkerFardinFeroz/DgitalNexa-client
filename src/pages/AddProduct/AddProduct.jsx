@@ -55,7 +55,7 @@ const AddProduct = () => {
     };
     console.log(newProduct);
       // send data to the server
-      fetch("http://localhost:5000/products", {
+      fetch("https://digital-nexa-server.vercel.app/products", {
         method: "POST",
         headers: {
           "content-type": "application/json",

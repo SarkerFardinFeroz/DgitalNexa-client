@@ -39,7 +39,7 @@ const RegisterPage = () => {
           .then(() => {
             const uid = res.user?.uid;
             const user = { name, email, photo, uid };
-            fetch("http://localhost:5000/user", {
+            fetch("https://digital-nexa-server.vercel.app/user", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

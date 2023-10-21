@@ -9,6 +9,7 @@ import PrivetRoute from "./PrivetRoute";
 import Products from "../pages/Products/Products";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import UpdateProduct from "../pages/UpdataProduct/UpdateProduct";
+import MyCart from "../pages/My Cart/MyCart";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/brand"),
+        loader: () => fetch("https://digital-nexa-server.vercel.app/brand"),
       },
       {
         path: "/add/product",
@@ -30,10 +31,20 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/cart",
+        element: (
+          <PrivetRoute>
+            <MyCart />
+          </PrivetRoute>
+        ),
+        loader: () =>
+          fetch(`https://digital-nexa-server.vercel.app/cart`),
+      },
+      {
         path: "/update/product/:id",
         element: <UpdateProduct />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://digital-nexa-server.vercel.app/product/${params.id}`),
       },
       {
         path: "/products",
@@ -42,7 +53,7 @@ const router = createBrowserRouter([
             <Products />
           </PrivetRoute>
         ),
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://digital-nexa-server.vercel.app/products"),
       },
       {
         path: "/products/:brand",
@@ -52,7 +63,7 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/products/${params.brand}`),
+          fetch(`https://digital-nexa-server.vercel.app/products/${params.brand}`),
       },
       {
         path: "/products/details/:id",
@@ -62,7 +73,7 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://digital-nexa-server.vercel.app/product/${params.id}`),
       },
 
       {

@@ -5,8 +5,8 @@ const Footer = () => {
     <div className="shadow-2xl border-t  border-[#8e8d8d3f] mt-14">
       <footer className="footer max-w-[1304px] px-4 mx-auto p-10  text-base-content">
       <aside>
-          <h1 className="font-bold  text-xl md:text-3xl">
-           <Link to={'/'}> DigitalNe<span className="bg-[#24dc7a] text-black px-2 rounded-full">X</span>a</Link>
+          <h1 className="font-bold font-Caveat pb-2  text-2xl md:text-4xl">
+           <Link to={'/'}> DigitalNe<span className=" ml-1 bg-[#24dc7a] text-black px-2 rounded-full">X</span>a</Link>
           </h1>
           <p>
             123 Skyline Plaza Avenue

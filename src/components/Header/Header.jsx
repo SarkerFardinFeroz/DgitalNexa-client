@@ -31,7 +31,7 @@ const Header = () => {
     </>
   );
   return (
-    <header className=" relative z-50 bg-[#000000b4]  shadow-lg border-b border-[#61616131] backdrop-blur-2xl  text-white   ">
+    <header className=" relative z-50  backdrop-blur-2xl    ">
       <nav className="navbar max-w-[1504px] px-4   mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -59,13 +59,13 @@ const Header = () => {
             </ul>
           </div>
           <Link to={'/'}>
-            <div className="btn btn-ghost normal-case text-xl">
-              <h1 className="font-bold text-xl md:text-3xl">DigitalNe<span className="bg-[#24dc7a] text-black px-2 rounded-full">X</span>a</h1>
+            <div className="btn btn-ghost  normal-case text-xl">
+              <h1 className="font-bold text-2xl font-Caveat md:text-4xl">DigitalNe<span className="ml-1 bg-[#24dc7a] text-black px-2 rounded-full">X</span>a</h1>
             </div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className=" menu-horizontal gap-5 bg-none  px-1">{navLinks}</ul>
+          <ul className=" menu-horizontal gap-5 bg-none   px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
           <div>
@@ -101,7 +101,7 @@ const Header = () => {
                     </li>
                   </ul>
                 </div>
-                <div className="lg:flex items-center ">
+                <div className="hidden  lg:flex items-center ">
                   <ToggelMode />
                 </div>
               </div>
@@ -112,7 +112,7 @@ const Header = () => {
                     login
                   </button>
                 </Link>
-                <div className="hidden lg:flex items-center">
+                <div className=" hidden lg:flex items-center">
                   <ToggelMode />
                 </div>
               </div>

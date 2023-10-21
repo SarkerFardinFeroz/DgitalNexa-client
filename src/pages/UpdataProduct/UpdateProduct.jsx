@@ -72,7 +72,7 @@ const UpdateProduct = () => {
     };
     console.log(updatedProduct);
     // send data to the server
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://digital-nexa-server.vercel.app/product/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -95,11 +95,11 @@ const UpdateProduct = () => {
         <h2 className="text-3xl  text-center pb-4 font-extrabold">
           Update product
         </h2>
-        <div className=" bg-base-100 border-[#6867671f] border p-4 flex my-4 w-max px-10 mx-auto rounded-md  shadow-md">
+        <div className=" bg-base-100 border-[#6867671f] border p-4 md:flex my-4 md:w-max px-10 mx-auto rounded-md  shadow-md">
           <figure className="border  rounded-xl">
             <img
               src={image}
-              className="mx-auto rounded-xl object-contain w-[300px]"
+              className="mx-auto rounded-xl object-contain w-[100px] md:w-[300px]"
             />
           </figure>
 
