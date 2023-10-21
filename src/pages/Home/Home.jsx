@@ -1,9 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-import BrandCards from "../../components/BrandCards/BrandCards";
 import Banner from "../../components/Banner/Banner";
-import Marquee from "react-fast-marquee";
 import { useEffect, useState } from "react";
 import PopularProducts from "../../components/PopularProducts/PopularProducts";
+import BrandCards from "../../components/BrandCards/BrandCards";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -28,19 +27,19 @@ const Home = () => {
             Popular Brands
           </h1>
           <div className=" w-[200px] md:w-[600px] mx-auto h-[2px] bg-[#00000063]"></div>
-          <div className="text-black font-semibold">
-            <Marquee direction="left" speed="20" pauseOnClick>
+          <div className="text-black grid  md:grid-cols-3 gap-6 pt-6 font-semibold">
+            
               {brandCards.map((card, idx) => (
                 <BrandCards key={idx} card={card} />
               ))}
-            </Marquee>
+           
           </div>
         </div>
 
-        <div className="py-10">
-          
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
-                
+        <div className="py-20">
+          <h2 className="text-4xl  font-bold"> Popular Products: </h2>
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 mt-4 gap-4">
+
 
           {data.slice(0,4).map((product, idx) => (
             <PopularProducts key={idx} product={product} />
@@ -71,7 +70,7 @@ const Home = () => {
                   <p className="text-lg text-white">Why Choose Us?</p>
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="md:flex items-center space-y-3 md:space-y-0 justify-between">
                   <div>
                     <h1 className="text-2xl font-semibold text-white">100%</h1>
                     <p className="text-gray-300">Premium Quality Products</p>
